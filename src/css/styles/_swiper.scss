@@ -1,7 +1,4 @@
 .swiper {
-  width: 100%;
-  height: 716px;
-
   &__article:nth-child(1),
   &__article:nth-child(2),
   &__article:nth-child(3) {
@@ -100,6 +97,9 @@
 }
 
 .mySwiper {
+  width: 100%;
+  height: 716px;
+
   & .swiper-pagination-bullet {
     bottom: 4px;
     width: 30px;
@@ -125,6 +125,8 @@
 }
 
 .secondSwiper {
+  //width: 67%;
+  margin-left: 0;
   padding-top: 74px;
   text-align: left !important;
 
@@ -138,7 +140,7 @@
   & .swiper-scrollbar {
     top: 40px;
     left: 0;
-    width: 32%;
+    width: 47%;
   }
 
   & .swiper-pagination-bullet-active {
@@ -236,6 +238,10 @@
   width: 53.127rem;
 }
 
+.content2 .lead {
+  padding-bottom: 25px;
+}
+
 .text {
   &1 {
     padding-bottom: 8px;
@@ -248,10 +254,8 @@
 
 .lead {
   display: flex;
-  padding-bottom: 25px;
 
   &__wrap {
-    width: 41%;
     padding-top: 15px;
     padding-left: 28px;
   }
@@ -280,7 +284,7 @@
   }
 
   &__excerpt {
-    width: 46%;
+    margin-bottom: 10px;
     font-family: $ttf;
     font-size: 24px;
   }
@@ -308,27 +312,14 @@
 
 .aside {
 
-  &1, &2 {
-    // position: absolute;
-    // //bottom: 16px;
-    // right: 0;
-    // width: 32%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   &__title {
     padding-bottom: 12px;
   }
 }
 
 .ad {
-  position: absolute;
-  top: 0;
-  right: 0;
-  grid-area: ad;
-  // margin-bottom: 30px;
-  // padding-top: 5px;
+  position: relative;
+  margin-bottom: 30px;
 
   &__descr {
     position: absolute;
@@ -365,11 +356,6 @@
   }
 }
 
-.works {
-  grid-area: works;
-
-}
-
 .swiper__custom {
   color: $dove-gray-color;
   font-weight: 700;
@@ -384,5 +370,20 @@
   display: flex;
   flex-wrap: nowrap;
 }
+
+.left-block {
+  width: 68%;
+}
+
+.unvisible {
+  position: fixed;
+  transform: scale(0);
+}
+
+.works {
+  transition: margin-right 3s ease-in-out;
+}
+
+
 
 

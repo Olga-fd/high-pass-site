@@ -119,6 +119,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
   &-serv {
     position: relative;
+    display: flex;
   }
 }
 
@@ -161,10 +162,11 @@ footer {
 
 .scale {
   transition: 1s;  /* Время эффекта */
- }
- .scale:hover {
+}
+
+.scale:hover {
   transform: scale(1.2); /* Увеличиваем масштаб */
- }
+}
 
 .header {
   &__container {
@@ -411,13 +413,14 @@ footer {
     padding-bottom: 39px;
   }
 
-  &__servecies h2 {
-    padding-bottom: 18px;
+  &__services {
+    margin-bottom: 40px;
   }
+
+
 
   &__art-mc {
     padding-top: 16px;
-    //padding-right: 31px;
   }
 
   &__art-mc p {

@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.swiper {
-  width: 100%;
-  height: 716px;
-}
 .swiper__article:nth-child(1), .swiper__article:nth-child(2), .swiper__article:nth-child(3) {
   width: 191px;
   height: 295px;
@@ -82,6 +78,10 @@
   height: 634px;
 }
 
+.mySwiper {
+  width: 100%;
+  height: 716px;
+}
 .mySwiper .swiper-pagination-bullet {
   bottom: 4px;
   width: 30px;
@@ -104,6 +104,7 @@
 }
 
 .secondSwiper {
+  margin-left: 0;
   padding-top: 74px;
   text-align: left !important;
 }
@@ -116,7 +117,7 @@
 .secondSwiper .swiper-scrollbar {
   top: 40px;
   left: 0;
-  width: 32%;
+  width: 47%;
 }
 .secondSwiper .swiper-pagination-bullet-active {
   color: #ff6e30 !important;
@@ -189,6 +190,10 @@
   width: 53.127rem;
 }
 
+.content2 .lead {
+  padding-bottom: 25px;
+}
+
 .text1 {
   padding-bottom: 8px;
 }
@@ -198,10 +203,8 @@
 
 .lead {
   display: flex;
-  padding-bottom: 25px;
 }
 .lead__wrap {
-  width: 41%;
   padding-top: 15px;
   padding-left: 28px;
 }
@@ -226,7 +229,7 @@
   background-position: center right;
 }
 .lead__excerpt {
-  width: 46%;
+  margin-bottom: 10px;
   font-family: "TTFirsNeue", Arial, sans-serif;
   font-size: 24px;
 }
@@ -246,20 +249,13 @@
   grid-area: lead5;
 }
 
-.aside1, .aside2 {
-  display: flex;
-  flex-wrap: wrap;
-  height: 893px;
-}
 .aside__title {
   padding-bottom: 12px;
 }
 
 .ad {
-  position: absolute;
-  top: 0;
-  right: 0;
-  grid-area: ad;
+  position: relative;
+  margin-bottom: 30px;
 }
 .ad__descr {
   position: absolute;
@@ -290,10 +286,6 @@
   padding-bottom: 9px;
 }
 
-.works {
-  grid-area: works;
-}
-
 .swiper__custom {
   color: #666;
   font-weight: 700;
@@ -307,6 +299,19 @@
 .wrap-box {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.left-block {
+  width: 68%;
+}
+
+.unvisible {
+  position: fixed;
+  transform: scale(0);
+}
+
+.works {
+  transition: margin-right 3s ease-in-out;
 }
 
 @font-face {
@@ -416,6 +421,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 .container-serv {
   position: relative;
+  display: flex;
 }
 
 h2 {
@@ -684,8 +690,8 @@ footer {
 .main__projects {
   padding-bottom: 39px;
 }
-.main__servecies h2 {
-  padding-bottom: 18px;
+.main__services {
+  margin-bottom: 40px;
 }
 .main__art-mc {
   padding-top: 16px;
