@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High pass</title>
+  <link rel="stylesheet" href="src/css/normalize.css">
+  <link rel="stylesheet" href="src/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- <script defer src="src/js/swiper-bundle.min.js"></script> -->
+  <script defer src="src/js/scripts.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header__menu">
+      <div class="container header__container menu">
+        <a class="logo header__logo" href="#">
+          <img src="src/img/logo.svg" class="" alt="Логотип">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__list list-reset">
+                <li class="header__item">
+                    <a class="header__item_link" href="#">О студии</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__item_link" href="#">Наши проекты</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__item_link" href="#">Услуги</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__item_link" href="#">Мастер-классы</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__item_link" href="#">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__social">
+          <a class="header__link insta" href="https://www.instagram.com"></a>
+          <a class="header__link fb" href="https://www.facebook.com"></a>
+          <a class="header__link vk" href="https://vk.com"></a>
+        </div>
+      </div>
+    </div>
+    <div class="header__contacts">
+      <div class="container header__container contacts">
+        <a class="header__tel" href="tel:+749542423532">+7 (495) 42-423-532</a>
+        <form class="header__form" action="">
+          <button class="btn-reset header__btn header__btn--search" aria-label="Открыть поиск"></button>
+          <input type="search" class="header__search" id="search">
+          <label class="header__label" for="search">Что будем искать?</label>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container main__container">
+      <section class="main__preview">
+        <figure class="main__figure">
+          <a class="main__hashtag hashtag" href="#">#мастеркласс</a>
+          <img class="main__img" src="src/img/foto1.jpg" alt="Афиша мастер-класса">
+        <figcaption class="main__figcaption">
+          <p class="parag-mc">Мастер-класс от Игоря Робова</p>
+          <h1 class="main__title-mc">Неоновый фотосет 2.0 7&nbsp;июля 20:00</h1>
+          <a class="main__link" type="button" href="">Узнать больше</a>
+        </figcaption>
+        </figure>
+
+        <div class="main__box">
+          <h2 class="main__title">Работы участников предыдущего мастер-класса</h2>
+          <img class="main__img1" src="src/img/photo.jpg" alt="Пример работы">
+        </div>
+        <img class="main__img2" src="src/img/photo1.jpg" alt="Пример работы">
+        <img class="main__img3" src="src/img/photo2.jpg" alt="Пример работы">
+       </section>
+    </div>
+
+    <section class="main__about">
+      <div class="container main__about_container">
+        <div class="inner">
+          <h2 class="main__title-black">О студии</h2>
+          <p class="main__parag">В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы,
+          инициированные исключительно синтетически, ограничены исключительно образом мышления.
+          Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада
+          требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что
+          семантический разбор внешних противодействий фиксирует необходимость распределения внутренних
+          резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности
+          для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения
+          предполагает независимые способы реализации новых принципов формирования материально-технической
+          и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации
+          являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.</p>
+        </div>
+        <div class="inner">
+          <img class="main__image" src="src/img/cam.jpg" alt="Фотоаппарат">
+          <form class="main__form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+            <fieldset class="main__fieldset">
+              <legend class="main__legend">Подписаться на рассылку</legend>
+              <input class="main__input" type="email" placeholder="E-mail">
+              <button class="main__btn" type="submit">Отправить</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="main__projects">
+      <div class="container">
+        <h2 class="main__title-swipe">Наши проекты</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide-first">
+              <div class="content">
+                <article class="swiper__article article1">
+                <img src="src/img/proj1.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#пейзаж</a>
+                <a href="#" class="swiper__article-text text1">
+                  Синтетически, смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени...
+                </a>
+                <time datetime="2021-06-16" class="swiper__article-date">16 июня</time>
+              </article>
+              <article class="swiper__article article2">
+                <img src="src/img/proj2.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#портрет</a>
+                <a href="#" class="swiper__article-text text1">
+                  В&nbsp;своём стремлении улучшить опыт мы&nbsp;упускаем, что явные...
+                </a>
+                <time datetime="2021-05-28" class="swiper__article-date">28 мая</time>
+              </article>
+              <article class="swiper__article article3">
+                <img src="src/img/proj3.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#предмет</a>
+                <a  href="#" class="swiper__article-text text1">
+                  Равным образом, высокое качество позиционных...
+                </a>
+                <time datetime="2021-05-14" class="swiper__article-date">14 мая</time>
+              </article>
+              <article class="swiper__article article4">
+                <img src="src/img/proj4.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#проектзабвение</a>
+                <div class="swiper__caption">
+                  <time datetime="2021-03-20" class="swiper__date">20 марта</time>
+                  <h3 class="swiper__caption-title">Забвение</h3>
+                  <p class="swiper__caption-text">
+                    Играет важную роль в&nbsp;формировании глубокомысленных рассуждений
+                  </p>
+                </div>
+                <a class="swiper__caption-link swiper__caption-link1" href="#">О проекте</a>
+              </article>
+              <article class="swiper__article article5">
+                <img src="src/img/proj5.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#fuji</a>
+                <div class="swiper__caption">
+                  <time datetime="2021-04-09" class="swiper__date">9 апреля</time>
+                  <h3 class="swiper__caption-title">Cемантический разбор</h3>
+                  <p class="swiper__caption-text">
+                    В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы
+                  </p>
+                </div>
+                <a class="swiper__caption-link swiper__caption-link2" href="#">О проекте</a>
+              </article>
+              <article class="swiper__article article6">
+                <img src="src/img/proj6.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#ретушь</a>
+                <a href="#" class="swiper__article-text text2">
+                  Как принято считать, многие известные&nbsp;личности и&nbsp;по&nbsp;сей день остаются уделом либералов...
+                </a>
+                <time datetime="2021-03-09" class="swiper__article-date">9 марта</time>
+              </article>
+              <article class="swiper__article article7">
+                <img src="src/img/proj7.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#портрет</a>
+                <a href="#" class="swiper__article-text text2">
+                  С&nbsp;учётом сложившейся международной&nbsp;обстановки, новая модель организационной...
+                </a>
+                <time datetime="2021-03-01" class="swiper__article-date">1 марта</time>
+              </article>
+              </div>
+            </div>
+            <div class="swiper-slide slide-second">
+              <div class="content content1">
+                <article class="swiper__article article1">
+                <img src="src/img/second/proj9.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#пейзаж</a>
+                <a href="#" class="swiper__article-text text1">
+                  Равным образом, сложившаяся структура организации...
+                </a>
+                <time datetime="2021-02-15" class="swiper__article-date">15 февраля</time>
+              </article>
+              <article class="swiper__article article2">
+                <img src="src/img/second/proj10.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#предмет</a>
+                <a href="#" class="swiper__article-text text1">
+                  Безусловно, реализация намеченных плановых заданий обеспечивает...
+                </a>
+                <time datetime="2021-05-28" class="swiper__article-date">28 мая</time>
+              </article>
+              <article class="swiper__article article3">
+                <img src="src/img/second/proj11.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#пейзаж</a>
+                <a href="#" class="swiper__article-text text1">
+                  Безусловно, курс на&nbsp;социальный национальный...
+                </a>
+                <time datetime="2021-02-10" class="swiper__article-date">10 февраля</time>
+              </article>
+              <article class="swiper__article article4">
+                <img src="src/img/second/proj8.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#портрет</a>
+                <div class="swiper__caption">
+                  <time datetime="2021-02-24" class="swiper__date">24 февраля</time>
+                  <h3 class="swiper__caption-title">Спорная точка зрения</h3>
+                  <p class="swiper__caption-text">
+                    Ясность нашей позиции очевидна: убеждённость некоторых оппонентов
+                  </p>
+                </div>
+                <a class="swiper__caption-link swiper__caption-link3" href="#">О проекте</a>
+              </article>
+              <article class="swiper__article article5">
+                <img src="src/img/second/proj14.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#проектджаз</a>
+                <div class="swiper__caption">
+                  <time datetime="2021-02-02" class="swiper__date">2 февраля</time>
+                  <h3 class="swiper__caption-title">Задания по&nbsp;разработке своевременного</h3>
+                  <p class="swiper__caption-text">
+                    Повседневная практика показывает, что сложившаяся структура организации играет важную роль
+                  </p>
+                </div>
+                <a class="swiper__caption-link swiper__caption-link4" href="#">О проекте</a>
+              </article>
+              <article class="swiper__article article6">
+                <img src="src/img/second/proj12.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#ретушь</a>
+                <a href="#" class="swiper__article-text text2">
+                  Идейные соображения высшего порядка, а&nbsp;также убеждённость некоторых оппонентов...
+                </a>
+                <time datetime="2021-02-20" class="swiper__article-date">20 февраля</time>
+              </article>
+              <article class="swiper__article article7">
+                <img src="src/img/second/proj13.jpg" alt="" class="swiper__article-img">
+                <a class="hashtag swiper-tag" href="#">#портрет</a>
+                <a href="#" class="swiper__article-text text2">
+                  Прежде всего, повышение уровня гражданского сознания говорит о возможностях приоритизации...
+                </a>
+                <time datetime="2021-02-18" class="swiper__article-date">18 февраля</time>
+              </article>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+    <section class="main__services">
+      <div class="container container-serv">
+        <div class="swiper swiper1 secondSwiper unselectable">
+          <h2>Услуги студии</h2>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-scrollbar"></div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-services" data-label="Основной перечень">
+              <div class="content2">
+                <article class="lead lead1">
+                  <img src="src/img/art1.jpg" alt="Девушка в лесу">
+                  <div class="lead__wrap">
+                    <h3 class="lead__title">Высокий уровень вовлечения</h3>
+                    <p class="lead__text">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
+                    <a class="lead__link" href="#">Подробнее</a>
+                  </div>
+                </article>
+                <article class="lead lead2">
+                  <img src="src/img/art2.jpg" alt="Невеста держится за фату">
+                  <div class="lead__wrap">
+                    <h3 class="lead__title">Диаграммы связей</h3>
+                    <p class="lead__text">Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за&nbsp;собой процесс.</p>
+                    <a class="lead__link" href="#">Подробнее</a>
+                  </div>
+
+                </article>
+                <article class="lead lead3">
+                  <img src="src/img/art3.jpg" alt="Закат на море">
+                  <div class="lead__wrap">
+                    <h3 class="lead__title">Высокотехнологичная концепция</h3>
+                    <p class="lead__text">В&nbsp;частности, убеждённость некоторых оппонентов способствует подготовке и&nbsp;реализации анализа существующих паттернов.</p>
+                    <a class="lead__link" href="#">Подробнее</a>
+                  </div>
+
+                </article>
+                <article class="lead lead4">
+                  <img class="lead__img" src="src/img/art4.jpg" alt="Растение в горшке стоит на столе вместе с бутылочкой с надписью на английском">
+                  <div class="lead__wrap">
+                    <h3 class="lead__title">Сложившаяся структура организации</h3>
+                    <p class="lead__text">Кстати, сторонники тоталитаризма в&nbsp;науке будут объединены в&nbsp;целые кластеры себе подобных.</p>
+                    <a class="lead__link" href="#">Подробнее</a>
+                  </div>
+
+                </article>
+                <article class="lead lead5">
+                  <img src="src/img/art5.jpg" alt="Белая кухня">
+                  <div class="lead__wrap">
+                    <h3 class="lead__title">Внутренние резервы и&nbsp;ресурсы</h3>
+                    <p class="lead__text">Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также ключевые особенности структуры проекта являются только методом.</p>
+                    <a class="lead__link" href="#">Подробнее</a>
+                  </div>
+
+                </article>
+              </div>
+              <aside class="aside1">
+                <div class="ad">
+                  <img class="ad__img" src="src/img/ad.jpg" alt="Рекламный плакат о скидке 20% с изображением девушки с закрытыми глазами">
+                  <div class="ad__descr">
+                    <p class="ad__text">Акция!</p>
+                    <p class="ad__text-sub">Только в июне</p>
+                  </div>
+                  <div class="ad__descript">
+                    <img class="ad__img-discount" src="src/img/discount.svg" alt="Скидка 20%">
+                    <p class="ad__text-1">1,5 часа портретной съемки + ретушь 10 снимков</p>
+                    <a class="ad__link link-orange" href="#">Узнать больше</a>
+                  </div>
+                </div>
+
+                <h2 class="aside__title">Выполненные работы</h2>
+                <div class="works">
+                  <a href="#">
+                    <img class="scale" src="src/img/mini (1).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (2).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (3).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (4).jpg" alt="">
+                  </a>
+
+                  <a href="">
+                    <img class="scale" src="src/img/mini (5).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (6).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (7).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (8).jpg" alt="">
+                  </a>
+
+                  <a href="">
+                    <img class="scale" src="src/img/mini (9).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (10).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (11).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (12).jpg" alt="">
+                  </a>
+
+                  <a href="">
+                    <img class="scale" src="src/img/mini (13).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (14).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (15).jpg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="scale" src="src/img/mini (16).jpg" alt="">
+                  </a>
+                </div>
+              </aside>
+          </div>
+            <div class="swiper-slide swiper-services swiper-wrapper" data-label="Услуги по ретиши">
+              <div class="wrap-box">
+                <div class="content3">
+                  <article class="lead lead1">
+                    <img src="src/img/second/news1.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Принимая во&nbsp;внимание показатели</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead2">
+                    <img src="src/img/second/news2.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Также как высокое качество...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead3">
+                    <img src="src/img/second/news3.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Внезапно, предприниматели в&nbsp;интернете...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead4">
+                    <img src="src/img/second/news4.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Сделанные на&nbsp;базе аналитики выводы...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead5">
+                    <img src="src/img/second/news5.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Задача организации, в&nbsp;особенности...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead6">
+                    <img src="src/img/second/news6.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Таким образом, выбранный нами...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead7">
+                    <img src="src/img/second/news7.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Безусловно, семантический разбор...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead8">
+                    <img src="src/img/second/news8.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Есть над чем подумать: активные...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead9">
+                    <img src="src/img/second/news9.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Как принято считать, сторонники...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                  <article class="lead lead10">
+                    <img src="src/img/second/news10.jpg" alt="Девушка в лесу">
+                    <div class="lead__wrap">
+                      <p class="lead__excerpt">Активно развивающиеся страны...</p>
+                      <a class="lead__link" href="#">Подробнее</a>
+                    </div>
+                  </article>
+                </div>
+                <aside class="aside2">
+                  <div class="ad">
+                    <img class="ad__img" src="src/img/ad.jpg" alt="Рекламный плакат о скидке 20% с изображением девушки с закрытыми глазами">
+                    <div class="ad__descr">
+                      <p class="ad__text">Акция!</p>
+                      <p class="ad__text-sub">Только в июне</p>
+                    </div>
+                    <div class="ad__descript">
+                      <img class="ad__img-discount" src="src/img/discount.svg" alt="Скидка 20%">
+                      <p class="ad__text-1">1,5 часа портретной съемки + ретушь 10 снимков</p>
+                      <a class="ad__link link-orange" href="#">Узнать больше</a>
+                    </div>
+                  </div>
+                  <div class="works-block">
+                    <h2 class="aside__title">Выполненные работы</h2>
+                    <div class="works">
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (1).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (2).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (3).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (4).jpg" alt="">
+                      </a>
+
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (5).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (6).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (7).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (8).jpg" alt="">
+                      </a>
+
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (9).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (10).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (11).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (12).jpg" alt="">
+                      </a>
+
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (13).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (14).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (15).jpg" alt="">
+                      </a>
+                      <a href="#">
+                        <img class="scale" src="src/img/second/miniimg (16).jpg" alt="">
+                      </a>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="main__master">
+      <div class="container">
+        <h2 class="main__title-black">Мастер-классы</h2>
+
+        <div class="main__master_block">
+          <img src="src/img/cam1.jpg" alt="Фотоаппарат">
+          <article class="main__art-mc">
+            <time class="main__time-date" datetime="2021-06-18">8 июня</time>
+            <time class="main__time-clock">15:00</time>
+            <h3>Пленка для начинающих</h3>
+            <p>Высокий уровень вовлечения представителей целевой&nbsp;аудитории является четким доказательством простого факта: семантический разбор внешних&nbsp;противодействий, в&nbsp;своём классическом&nbsp;представлении.</p>
+            <a class="link-orange" href="#">Узнать больше</a>
+          </article>
+      <div class="main__master_block2 ">
+        <article class="main__master-art">
+          <img src="src/img/mc1.jpg" alt="">
+          <time class="main__time-date" datetime="2021-06-09">9 июня</time>
+          <time class="main__time-clock">15:00</time>
+          <h4>Ретушь. Продвинутый уровень</h4>
+        </article>
+        <article class="main__master-art">
+          <img src="src/img/mc2.jpg" alt="">
+          <time class="main__time-date" datetime="2021-06-10">10 июня</time>
+          <time class="main__time-clock">16:00</time>
+          <h4>Портретная съемка. Свет</h4>
+        </article>
+        <article class="main__master-art">
+          <img src="src/img/mc3.jpg" alt="">
+          <time class="main__time-date" datetime="2021-06-11">11 июня</time>
+          <time class="main__time-clock">16:00</time>
+          <h4>Макросъемка. Проблемы и нюансы</h4>
+        </article>
+        <article class="main__master-art">
+          <img src="src/img/mc4.jpg" alt="">
+          <time class="main__time-date" datetime="2021-06-13">13 июня</time>
+          <time class="main__time-clock">18:00</time>
+          <h4>Творческая ретушь для начинающих</h4>
+        </article>
+      </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="main__contacts">
+      <div class="container">
+        <h2>Контакты</h2>
+        <map name="">
+          <div></div>
+          <area shape="" coords="" href="" alt="">
+        </map>
+        <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <fieldset>
+            <legend>Отправить заявку</legend>
+            <input type="text" placeholder="Имя">
+            <input type="email"  placeholder="E-mail">
+            <textarea type="text" placeholder="Комментарий"></textarea>
+            <button type="submit">Отправить</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a class="logo header__logo">
+      <img src="src/img/logo.svg" alt="Логотип">
+    </a>
+    <p>Фотостудия High pass<sup class="reg">&reg;</sup> 2018-2020</p>
+    <blockquote>
+      <p>Которая из&nbsp;моих фотографий самая любимая? Та, которую я&nbsp;собираюсь снять завтра.</p>
+      <p>&copy;&nbsp;Имоджен Каннингем</p>
+    </blockquote>
+    <p>Больше интересного:</p>
+    <div class="social">
+      <a class="header__link insta" href="https://www.instagram.com"></a>
+      <a class="header__link fb" href="https://www.facebook.com"></a>
+      <a class="header__link vk" href="https://vk.com"></a>
+    </div>
+  </footer>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        loop: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+    });
+
+    const swiperSec = new Swiper(".secondSwiper", {
+      allowTouchMove: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        loop: true,
+        renderBullet: function (index, className) {
+          let arr = ['Основной перечень', 'Услуги по ретуши']
+          return '<span class="' + className + '">' + (arr[index]) + "</span>";
+        },
+      },
+
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+      }
+    });
+    swiperSec.scrollbar.updateSize();
+  </script>
+</body>
+</html>
