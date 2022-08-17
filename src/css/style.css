@@ -346,6 +346,8 @@
 }
 html {
   box-sizing: border-box;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -363,16 +365,23 @@ a {
   text-decoration: none;
 }
 
-p, h1 {
+p, h1, h2, h3, h4 {
   margin: 0;
 }
 
 body {
+  width: 100%;
   min-width: 320px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #202020;
+}
+
+header,
+main,
+footer {
+  width: 100%;
 }
 
 input[type=search]::-webkit-search-decoration,
@@ -413,6 +422,11 @@ input[type=search]::-webkit-search-results-decoration {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
    not supported by any browser */
+}
+
+.flex-box {
+  display: flex;
+  flex-flow: column;
 }
 
 .container {
@@ -691,7 +705,7 @@ footer {
   padding-bottom: 39px;
 }
 .main__services {
-  margin-bottom: 40px;
+  margin-bottom: 13px;
 }
 .main__art-mc {
   padding-top: 16px;
@@ -718,7 +732,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 45px;
 }
 .main__master_block2 {
   display: flex;
@@ -740,9 +754,16 @@ footer {
 .main__time-clock {
   background-image: url("../img/clock.svg");
 }
+.main__time-block {
+  padding: 15px 0 1px 15px;
+}
 .main__master-art {
   display: flex;
   flex-flow: row;
+  margin-bottom: 30px;
+}
+.main__master-art h4 {
+  padding-left: 15px;
 }
 .main__master-art img {
   height: 60px;
@@ -773,4 +794,20 @@ footer {
 footer {
   margin-bottom: 0;
   color: #fff;
+}
+
+.map {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6e30;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
