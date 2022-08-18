@@ -360,6 +360,10 @@ img {
   max-width: 100%;
 }
 
+a, button {
+  cursor: pointer;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -401,7 +405,6 @@ input[type=search]::-webkit-search-results-decoration {
   border: none;
   padding: 0;
   background-color: transparent;
-  cursor: pointer;
 }
 
 .visually-hidden {
@@ -455,7 +458,6 @@ h3 {
   font-weight: 700;
   color: #fff;
   background-color: #ff6e30;
-  cursor: pointer;
 }
 
 .header__menu,
@@ -472,7 +474,6 @@ footer {
   font-size: 14px;
   color: #fff;
   background-color: #333;
-  cursor: pointer;
 }
 
 .scale {
@@ -506,7 +507,6 @@ footer {
   align-items: center;
   height: 100%;
   font-family: "TTFirsNeue", Arial, sans-serif;
-  font-weight: 400;
 }
 .header__social, .header__link {
   display: inline-block;
@@ -544,9 +544,22 @@ footer {
 .header__search {
   display: inline-block;
   width: 169px;
+  color: #e9e9e9;
   background: transparent;
   border: none;
   border-bottom: 1px solid #e9e9e9;
+}
+.header__search::-moz-placeholder {
+  color: #e9e9e9;
+}
+.header__search:-ms-input-placeholder {
+  color: #e9e9e9;
+}
+.header__search::placeholder {
+  color: #e9e9e9;
+}
+.header__search:focus {
+  outline: none;
 }
 .header__btn {
   display: inline-block;
@@ -561,7 +574,6 @@ footer {
   left: 25px;
   top: 12px;
   font-family: "TTFirsNeue", Arial, sans-serif;
-  font-weight: 400;
   font-size: 14px;
   color: #e9e9e9;
 }
@@ -672,7 +684,6 @@ footer {
   padding-bottom: 13px;
   font-family: "TTFirsNeue", Arial, sans-serif;
   font-size: 24px;
-  font-weight: 400;
 }
 .main__input {
   width: 474px;
@@ -696,7 +707,7 @@ footer {
   font-weight: 700;
   color: #fff;
   background-color: #ff6e30;
-  cursor: pointer;
+  border: none;
 }
 .main__title-swipe {
   margin-bottom: 16px;
@@ -770,7 +781,39 @@ footer {
 }
 .main__contacts {
   padding-top: 40px;
+  padding-bottom: 68px;
+}
+.main__contacts h2 {
   padding-bottom: 22px;
+}
+.main__contacts .main__form_input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 0 16px 23px;
+  border: none;
+  background-color: #e9e9e9;
+}
+.main__contacts .main__form_input:nth-child(5) {
+  padding-bottom: 116px;
+}
+.main__contacts .main__form fieldset {
+  padding: 0 0 0 1.9rem;
+  border: none;
+}
+.main__contacts .main__form legend {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.main__contacts .main__form p {
+  display: inline-block;
+  padding-bottom: 14px;
+}
+.main__contacts_filling {
+  display: flex;
+}
+.main__contacts_filling img {
+  max-width: none;
 }
 
 .inner {
@@ -795,19 +838,78 @@ footer {
   margin-bottom: 0;
   color: #fff;
 }
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 25px;
+}
+footer figure {
+  width: 361px;
+}
 
 .map {
   position: relative;
+  height: auto;
 }
 
 .label {
   position: absolute;
-  top: 50px;
-  right: 100px;
+  top: 94px;
+  right: 224px;
   width: 12px;
   height: 12px;
   border: none;
   border-radius: 12px;
   background-color: #ff6e30;
-  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 48%;
+  height: 100%;
+  background-color: #202020;
+  opacity: 85%;
+}
+.overlay h3, .overlay .tel {
+  color: #fff;
+}
+.overlay h3 {
+  font-family: "TTFirsNeue", Arial, sans-serif, Arial, Helvetica, sans-serif;
+}
+
+.tel {
+  width: 22px;
+  height: 22px;
+  font-family: "TTFirsNeue", Arial, sans-serif, Arial, Helvetica, sans-serif;
+  background-image: url("../img/tel.svg");
+  background-repeat: no-repeat;
+  padding-left: 25px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/close.svg");
+  background-repeat: no-repeat;
+  border: none;
+}
+
+address {
+  z-index: 1000;
+  color: #cacaca;
+  font-style: normal;
+}
+
+.info {
+  padding-left: 60px;
+  padding-right: 60px;
 }/*# sourceMappingURL=style.css.map */
