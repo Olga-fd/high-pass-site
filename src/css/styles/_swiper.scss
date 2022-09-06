@@ -1,15 +1,23 @@
 .swiper {
-  &__article:nth-child(1),
-  &__article:nth-child(2),
-  &__article:nth-child(3) {
-    width: 191px;
-    height: 295px;
-  }
-
   &__article-text {
     display: inline-block;
     padding-top: 16px;
     line-height: 22px;
+    text-overflow: ellipsis;
+
+    &:link {
+      color: $mine-shaft-color;
+    }
+    &:visited {
+      color: $grenadier-color;
+    }
+    &:hover {
+      color: $burning-orange-color;
+    }
+    &:active {
+      background-color: $romantic-color;
+      color: $mine-shaft-color;
+    }
   }
 
   &__article {
@@ -64,7 +72,22 @@
     padding: 12px 17px;
     font-weight: 700;
     color: #fff;
-    border: 3px solid $burning-orange-color;
+
+    &:link {
+      border: 3px solid $burning-orange-color;
+    }
+    &:visited {
+      background-color: $grenadier-color;
+      border-color: $grenadier-color;
+    }
+    &:hover {
+      background-color: $burning-orange-color;
+    }
+    &:active {
+      background-color: $tuscany-color;
+      border-color: $burning-orange-color;
+    }
+
   }
 
   &__caption-link1 {
@@ -85,11 +108,6 @@
   &-services {
     display: flex;
   }
-
-  &1 {
-    height: 900px;
-  }
-
 }
 
 .slide-first {
@@ -112,6 +130,11 @@
     color: #000;
     opacity: 1;
     background: #c4c4c4;
+
+    &:hover {
+      background: $tuscany-color;
+      color: #fff;
+    }
   }
 
   & .swiper-pagination-bullet-active {
@@ -125,7 +148,6 @@
 }
 
 .secondSwiper {
-  //width: 67%;
   margin-left: 0;
   padding-top: 74px;
   text-align: left !important;
@@ -171,6 +193,11 @@
 }
 
 .article {
+  &1, &2, &3 {
+    width: 191px;
+    height: 295px;
+  }
+
   &1 {
     grid-area: art1;
   }
@@ -227,7 +254,7 @@
       "lead4 lead9"
       "lead5 lead10";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 140px 140px 140px 140px 140px;
+    grid-template-rows: repeat(5, 140px);
     grid-auto-flow: row;
     gap: 25px;
   }
@@ -269,7 +296,7 @@
 
   &__text {
     padding-bottom: 19px;
-    color: $dusty-gray;
+    color: $dusty-gray-color;
     line-height: 22px;
   }
 
@@ -281,6 +308,13 @@
     background-image: url('../img/arrow.svg');
     background-repeat: no-repeat;
     background-position: center right;
+
+    &:visited {
+      color: $grenadier-color;
+    }
+    &:active {
+      background-color: $romantic-color;
+    }
   }
 
   &__excerpt {
@@ -372,12 +406,7 @@
 }
 
 .left-block {
-  width: 68%;
-}
-
-.unvisible {
-  position: fixed;
-  transform: scale(0);
+  width: 67%;
 }
 
 .works {

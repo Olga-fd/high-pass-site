@@ -1,5 +1,6 @@
 @import './variables';
 @import './swiper';
+@import './media';
 
 @font-face {
   font-family: 'Roboto';
@@ -53,12 +54,9 @@ html {
   box-sizing: inherit;
 }
 
-img {
-  max-width: 100%;
-}
-
 a, button {
   cursor: pointer;
+  transition: all .3s ease;
 }
 
 a {
@@ -72,11 +70,17 @@ p, h1, h2, h3, h4 {
 
 body {
   width: 100%;
+  margin: 0;
   min-width: 320px;
   font-family: $roboto;
   font-size: 16px;
   font-weight: 400;
   color: $mine-shaft-color;
+}
+
+.unvisible {
+  position: fixed;
+  transform: scale(0);
 }
 
 header,
@@ -169,10 +173,10 @@ footer {
 .hashtag {
   position: absolute;
   z-index: 1;
-  padding: 7px 14px 7px 14px;
+  padding: 7px 14px;
   font-size: 14px;
   color: #fff;
-  background-color: $mine;
+  background-color: $mine-color;
 }
 
 .scale {
@@ -193,8 +197,8 @@ footer {
   }
   &__logo {
     display: inline-block;
-    height: 30.7px;
     width: 190.25px;
+    height: 30.7px;
     margin-right: 3%;
   }
   &__nav {
@@ -207,19 +211,33 @@ footer {
     align-items: center;
     height: 100%;
     font-family: $ttf;
-    // font-weight: 400;
   }
-  &__social,
+
   &__link {
     display: inline-block;
-  }
-  &__link {
     width: 30px;
     height: 30px;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
   }
-  &__link:not(:last-child) {
-    margin-right: 16px;
+
+  &__item_link {
+    color: #fff;
+
+    &:visited {
+      color: $grenadier-color;
+    }
+    &:hover {
+      color: $burning-orange-color;
+    }
+    &:active {
+      background-color: $tuscany-color;
+      color: #fff;
+    }
   }
+
   &__contacts {
     margin-bottom: 33px;
     background-color: $tundora-color;
@@ -243,28 +261,34 @@ footer {
     width: 194px;
     margin-bottom: 13px;
     padding-top: 4px;
+    border-bottom: 1px solid $mercury-color;
+
   }
   &__search {
     display: inline-block;
-    width: 169px;
-    color: $mercury;
+    width: 100%;
+    color: $mercury-color;
     background: transparent;
     border: none;
-    border-bottom: 1px solid $mercury;
+
 
     &::placeholder {
-      color: $mercury;
+      color: $mercury-color;
     }
 
     &:focus {
       outline: none;
+    }
+    &:active, &:target,
+    &:hover, &:focus  {
+      border-bottom-color: $burning-orange-color;
     }
   }
 
   &__btn {
     display: inline-block;
     width: 24px;
-    height: 24px;
+    height: 29.41px;
     background-image: url('../img/search.svg');
     background-repeat: no-repeat;
     background-position: bottom;
@@ -275,26 +299,28 @@ footer {
     left: 25px;
     top: 12px;
     font-family: $ttf;
-    // font-weight: 400;
     font-size: 14px;
-    color: $mercury;
+    color: $mercury-color;
   }
 }
 
-.insta, .fb, .vk {
+.burger {
+  display: none;
+}
+
+.contacts-wrap.flex-box {
+  flex-direction: row;
+}
+
+.ok, .vk {
   background-repeat: no-repeat;
-}
 
-.insta {
-  background-image: url('../img/insta.svg');
-}
-
-.fb {
-  background-image: url('../img/fb.svg');
-}
-
-.vk {
-  background-image: url('../img/vk.svg');
+  &:hover svg path {
+    fill: $burning-orange-color;
+  }
+  &:active svg path {
+    fill: $tuscany-color;
+  }
 }
 
 .menu {
@@ -311,19 +337,19 @@ footer {
 
   &__preview {
     display: grid;
-    grid-template-areas:
-    "block title title"
-    "block title title"
-    "block first second";
+    grid-template-areas: "block title title"
+                         "block first second";
     grid-template-columns: 1fr 300px 300px;
-    grid-template-rows: 1fr 300px 257px;
+    grid-template-rows: 350px 257px;
     grid-auto-flow: row;
     gap: 30px;
     height: 634px;
   }
+
   &__title-black {
     color: #fff;
   }
+
   &__figure {
     position: relative;
     margin: 0;
@@ -365,7 +391,8 @@ footer {
   }
 
   &__link {
-    padding: 15.5px 22px;
+    display: inline-block;
+    padding: 12.5px 19px;
     font-weight: 700;
     background-color: $burning-orange-color;
   }
@@ -398,6 +425,7 @@ footer {
   }
 
   &__fieldset {
+    position: relative;
     padding: 0;
     border: none;
   }
@@ -413,21 +441,39 @@ footer {
     width: 474px;
     height: 50px;
     margin-right: 25px;
+    padding-left: 17px;
     color: $silver-color;
     background-color: $tundora-color;
     border: none;
   }
 
-  &__input::placeholder {
-    padding-left: 17px;
+  &__input, &__form_input {
+    &:focus{outline: 1px solid $burning-orange-color;}
+    &:hover::placeholder {color: $burning-orange-color;}
+    &:out-of-range{outline: 1px solid $red-orange-color;}
   }
 
   &__btn {
-    padding: 14.2px 16px;
+    padding: 11.2px 13px;
     font-weight: 700;
     color: #fff;
     background-color: $burning-orange-color;
     border: none;
+  }
+
+  &__link, &__btn {
+    border: 3px solid transparent;
+
+    &:hover {
+      background-color: $tuscany-color;
+    }
+    &:active {
+      background-color: $burning-orange-color;
+      border: 3px solid $grenadier-color;
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__title-swipe {
@@ -534,7 +580,7 @@ footer {
         margin-bottom: 20px;
         padding: 15px 0 16px 23px;
         border: none;
-        background-color: $mercury;
+        background-color: $mercury-color;
 
         &:nth-child(5) {
           padding-bottom: 116px;
@@ -542,8 +588,14 @@ footer {
       }
 
       & fieldset {
+        position: relative;
         padding: 0 0 0 1.9rem;
         border: none;
+
+        & .label_input {
+          top: 35%;
+          left: 52px;
+        }
       }
 
       & legend {
@@ -564,9 +616,24 @@ footer {
         max-width: none;
       }
     }
-
   }
 }
+
+.label_input {
+  position: absolute;
+  top: 4px;
+  left: 16px;
+  font-family: $roboto;
+  font-size: 9px;
+  color: $red-orange-color;
+
+  #name + & {
+    top: 19%;
+    left: 52px;
+  }
+}
+
+
 
 .inner {
   width: 50%;
@@ -588,7 +655,13 @@ footer {
   gap: 30px;
 }
 
+h4 a {
+  font-family: $ttf;
+  font-weight: 400;
+}
+
 footer {
+  min-height: 106px;
   margin-bottom: 0;
   color: #fff;
 
@@ -596,17 +669,32 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0 25px;
   }
 
   & figure {
-    width: 361px;
+    width: 37%;
   }
+
+  & blockquote {
+    margin-bottom: 2.5%;
+  }
+
+  & figcaption {
+    padding-left: 8%;
+    color: #666;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
 }
 
 .map {
   position: relative;
-  height: auto;
+  width: 850px;
+  height: 460px;
 }
 
 .label {
@@ -618,6 +706,7 @@ footer {
   border: none;
   border-radius: 12px;
   background-color: $burning-orange-color;
+  animation: pulse 2s infinite;
 }
 
 .overlay {
@@ -626,10 +715,11 @@ footer {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  width: 48%;
-  height: 100%;
+  width: 0;
+  height: 460px;
   background-color: $mine-shaft-color;
   opacity: 85%;
+  transition: width .7s linear;
 
   & h3, & .tel {
     color: #fff;
@@ -641,12 +731,40 @@ footer {
 }
 
 .tel {
-  width: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 190px;
   height: 22px;
   font-family: $ttf, Arial, Helvetica, sans-serif;
-  background-image: url('../img/tel.svg');
-  background-repeat: no-repeat;
-  padding-left: 25px;
+
+  &:visited {
+    color: $grenadier-color;
+
+    & svg path {
+      fill: $grenadier-color;
+    }
+  }
+  &:hover {
+    color: $burning-orange-color;
+
+    & svg path {
+      fill: $burning-orange-color;
+    }
+  }
+  &:active {
+    color: #fff;
+    background-color: $tuscany-color;
+
+    & svg path {
+      fill: #fff;
+    }
+  }
+
+  & span {
+    display: inline-block;
+    top: 5px;
+  }
 }
 
 .close {
@@ -657,8 +775,11 @@ footer {
   width: 20px;
   height: 20px;
   background-image: url('../img/close.svg');
+  background-color: transparent;
   background-repeat: no-repeat;
   border: none;
+  opacity: 0;
+  transition: opacity .1s ease-in-out;
 }
 
 address {
@@ -668,6 +789,34 @@ address {
 }
 
 .info {
-  padding-left: 60px;
-  padding-right: 60px;
+  width: 386px;
+  padding-left: 11.63%;
+  opacity: 0;
+  transition: opacity .1s ease-in-out;
+
+  & h3 {
+    font-size: 24px;
+    font-weight: 400;
+    padding-top: 19px;
+  }
+
+  &__p {
+    line-height: 28px;
+  }
 }
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
